@@ -1666,3 +1666,183 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
+
+.actions-centered {
+    display: flex; 
+    justify-content: center; 
+    width: 100%; 
+    padding: 0; 
+    list-style: none; 
+    margin: 1.5em 0 0; 
+}
+.actions-centered li {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+
+.actions-centered li + li {
+    margin-left: 1em !important;
+}
+
+
+#project-azure .major,
+#project-aws .major {
+    margin-bottom: 1rem; 
+    font-size: 1.8em; 
+    line-height: 1.2; 
+    word-break: break-word; 
+    overflow-wrap: break-word; 
+}
+
+
+@media screen and (max-width: 736px) {
+    #project-azure .major,
+    #project-aws .major {
+        font-size: 1.5em; 
+    }
+}
+/* Correção para títulos longos nos projetos */
+#main article h2.major {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+}
+
+/* Correção específica para os artigos de projetos */
+#project-azure h2.major,
+#project-aws h2.major {
+    font-size: 1.4rem;
+    line-height: 1.2;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: solid 1px #ffffff;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Ajuste para telas menores */
+@media screen and (max-width: 736px) {
+    #project-azure h2.major,
+    #project-aws h2.major {
+        font-size: 1.2rem;
+        line-height: 1.1;
+    }
+    
+    #main article h2.major {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #project-azure h2.major,
+    #project-aws h2.major {
+        font-size: 1.1rem;
+        line-height: 1.1;
+    }
+    
+    #main article h2.major {
+        font-size: 1.2rem;
+    }
+}
+
+/* Garantir que o container do artigo tenha largura adequada */
+#main article {
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+/* Ajuste adicional para todos os elementos dentro do artigo */
+#main article * {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+/* Estilo para o aviso "Em Construção" */
+.construction-notice {
+    background: linear-gradient(45deg, rgba(255, 193, 7, 0.1), rgba(255, 152, 0, 0.1));
+    border: 2px dashed rgba(255, 193, 7, 0.6);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.construction-notice::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 193, 7, 0.1),
+        transparent
+    );
+    animation: shimmer 2s infinite;
+}
+
+.construction-notice h3 {
+    color: #ffc107;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px rgba(255, 193, 7, 0.3);
+    animation: pulse 2s infinite ease-in-out;
+}
+
+.construction-notice p {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    font-style: italic;
+}
+
+/* Animações */
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.02);
+    }
+}
+
+/* Responsividade para o aviso */
+@media screen and (max-width: 736px) {
+    .construction-notice {
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+    
+    .construction-notice h3 {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .construction-notice {
+        padding: 0.8rem;
+    }
+    
+    .construction-notice h3 {
+        font-size: 0.9rem;
+    }
+}
